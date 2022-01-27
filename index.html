@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+
+    <title>Supernatural Map</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="box header">
+            <h1> SUPERNATURAL </h1>
+        </header>
+
+
+        <div id="map" class="content">
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1Ijoic3luYXB0eWMiLCJhIjoiY2pmbGFpZ3gzMGR4aTJxbzExcHN0czA4YyJ9.8Y5bmynBiqQNXkbo8v4n4w';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/synaptyc/cjflaok36hedd2rp9foocq9z4',
+                    center: [-94.534084, 38.999671],
+                    // initial zoom
+                    zoom: 7
+                });
+
+            </script>
+        </div>
+
+        <div id="features" class="box sidebar">
+
+            <img src="images/logo.png" alt="supernatural logo">
+
+
+            <section id='kansas' class='active'>
+                <h3> Kansas - Where everything begins </h3>
+                <p>A normal family in the city of Kansas starts to fight demons and supranatural things. Two boys and their dad start hunting different creautres, after their mother gets killed by one of those creatures. So, they realize everything is real, vampires, werewolfs, ghosts, demons, hell, heaven. </p>
+            </section>
+
+            <section id='dad-death'>
+                <h3> After mother, the dad's death follows. </h3>
+                <p> Trying to hunt down the the demon that killed their mother, one of the Winchester brothers, Dean, gets almost killed, so his father sells it's soul for his son soul to the demon. Sam and Dean have to deal with the dead of their fathers now too. </p>
+            </section>
+
+            <section id='ruby-demon'>
+                <h3> Any ally is welcomed! </h3>
+                <p> In their desperate hunt for the demon, they met other demon, willing to help Sam and Dean. The new demon, Ruby, is attracted to Sam in a strange way, and she offers to help them track Lilith, the first demon ever made, turned by Lucifer himself. Unfortunately both, Sam and Dean end in Hell. </p>
+            </section>
+
+            <section id='hell'>
+                <h3> Going to Hell </h3>
+                <p>After their fight with Lilith the brothers get trapped in Hell, but they manage to free themselves, unfortunately, they free Lucifer from its Cage too, so they have to stop the Apocalypse too. They make a new friend, Castiel, which is a very loial angel. In the end Castiel becomes one of the most important character, with a big role in stopping Lucifer from destroying the World. </p>
+            </section>
+
+            <section id='apocalypse'>
+                <h3> Save the World! </h3>
+                <p>In order to save the World, Sam becomes Lucifer's human body, which almost destroys him. In this form he kills Castiel and most of the people helping them to stop the Apocalypse. In the end, after a lot of prayers, God stops the Apocalypse, he ressurects Castiel, Sam manages to take control over Lucifer's Spirit in his body, and even kick him out, so he gets trapped back in his cage. Unfrotunately Sam loses his soul, and he becomes the King's of Hell puppet, used to hunt for him. </p>
+            </section>
+
+            <section id='new-life'>
+                <h3>Good Life</h3>
+                <p>Dean tries to deal with Sam's disappearence, thinking he is dead, so he lives a new life, but he find Sam alive and without a soul, so he gives up on his life and girlfriend for his little brother. In order to help him, Dean manages to reach to the only creatures able to control souls, Death himself. He releases Sam from Lucifer's cage and blocks his memories from there. </p>
+            </section>
+
+            <section id='illusions'>
+                <h3>Not really free</h3>
+                <p>Sam starts to have hallucinations with Lucifer, and he starts to remember everything. Crawley, the King of Hell gets a tablet named Hell Tablet. IT can open the gates of Hell on earth, without releasing Lucifer. He tries to use it, but the brothers manage to take it from him, yet, a new characters comes up, being the sister of God, she is really mad and upset on this world, she doesn't care so she just tries to destroy everything. </p>
+            </section>
+
+            <section id='God'>
+                <h3>When God shows up</h3>
+                <p>In such a crisis and destruction on Earth, God feels like is time for him to come and stop all the supernatural things that are threatening the humans. He save some of the dead angles, stops the demons, and his sister. He doesn't kill her, but he makes peace with her, and she leaves, creating her own universe. </p>
+            </section>
+
+            <script>
+                var chapters = {
+                    'kansas': {
+                        bearing: 27,
+                        center: [-94.534084, 38.999671],
+                        zoom: 11,
+                        pitch: 20
+                    },
+                    'dad-death': {
+                        duration: 6000,
+                        center: [-82.034084, 29.909671],
+                        bearing: 150,
+                        zoom: 10,
+                        pitch: 0
+                    },
+                    'ruby-demon': {
+                        bearing: 90,
+                        center: [-77.034084, 35.909671],
+                        zoom: 9,
+                        speed: 0.6,
+                        pitch: 40
+                    },
+                    'hell': {
+                        bearing: 90,
+                        center: [-83.034084, 40.909671],
+                        zoom: 12
+                    },
+                    'apocalypse': {
+                        bearing: 45,
+                        center: [-87.034084, 34.909671],
+                        zoom: 9,
+                        pitch: 20,
+                        speed: 0.5
+                    },
+                    'new-life': {
+                        bearing: 180,
+                        center: [-97.034084, 35.909671],
+                        zoom: 9
+                    },
+                    'illusions': {
+                        bearing: 90,
+                        center: [-92.034084, 44.909671],
+                        zoom: 11,
+                        pitch: 40
+                    },
+                    'God': {
+                        bearing: 90,
+                        center: [-115.034084, 35.909671],
+                        zoom: 8,
+                        pitch: 20
+                    }
+                };
+
+                // On every scroll event, check which element is on screen
+                features.onscroll = function() {
+                    var chapterNames = Object.keys(chapters);
+                    for (var i = 0; i < chapterNames.length; i++) {
+                        var chapterName = chapterNames[i];
+                        if (isElementOnScreen(chapterName)) {
+                            setActiveChapter(chapterName);
+                            break;
+                        }
+                    }
+                };
+
+                var activeChapterName = 'kansas';
+
+                function setActiveChapter(chapterName) {
+                    if (chapterName === activeChapterName) return;
+
+                    map.flyTo(chapters[chapterName]);
+
+                    document.getElementById(chapterName).setAttribute('class', 'active');
+                    document.getElementById(activeChapterName).setAttribute('class', '');
+
+                    activeChapterName = chapterName;
+                }
+
+                function isElementOnScreen(id) {
+                    var element = document.getElementById(id);
+                    var bounds = element.getBoundingClientRect();
+                    return bounds.top < window.innerHeight && bounds.bottom > 0;
+                }
+
+            </script>
+
+            <script>
+                 var marker = new mapboxgl.Marker()
+                    .setLngLat([-94.534084, 38.999671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-105.034084, 43.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-82.034084, 29.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-77.034084, 35.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-83.034084, 40.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-87.034084, 34.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-97.034084, 35.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-92.034084, 44.909671])
+                    .addTo(map);
+                
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-115.034084, 35.909671])
+                    .addTo(map);
+                
+
+            </script>
+        </div>
+
+        <div class="box footer"> Footer </div>
+
+    </div>
+
+</body>
+
+</html>
